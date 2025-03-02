@@ -130,19 +130,8 @@ function! vimspector#internal#popup#Confirm(
         \   'filter': function( 's:ConfirmKeyFilter', [ a:keys ] ),
         \   'mapping': v:false,
         \ }
-  let config = vimspector#internal#popup#SetBorderChars( config )
 
   return popup_dialog( buf, config  )
-endfunction
-
-function! vimspector#internal#popup#SetBorderChars( config ) abort
-  " When ambiwidth is single, use prettier characters for the border. This
-  " would look silly when ambiwidth is double.
-  if &ambiwidth ==# 'single' && &encoding ==? 'utf-8'
-    let a:config[ 'borderchars' ] = [ '─', '│', '─', '│', '╭', '╮', '┛', '╰' ]
-  endif
-
-  return a:config
 endfunction
 
 
