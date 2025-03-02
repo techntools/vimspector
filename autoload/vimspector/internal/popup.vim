@@ -22,8 +22,9 @@ set cpoptions&vim
 
 function! vimspector#internal#popup#DisplaySplash( message ) abort
   return popup_dialog( a:message, {
-        \ 'close': 'button',
         \ 'drag': 1,
+        \ 'border': [0, 0, 0, 0],
+        \ 'padding': [1],
         \ } )
 endfunction
 
@@ -129,9 +130,11 @@ function! vimspector#internal#popup#Confirm(
         \   'callback': function( 's:ConfirmCallback', [ a:confirm_id ] ),
         \   'filter': function( 's:ConfirmKeyFilter', [ a:keys ] ),
         \   'mapping': v:false,
+        \   'border': [0, 0, 0, 0],
+        \   'padding': [1],
         \ }
 
-  return popup_dialog( buf, config  )
+  return popup_dialog( buf, config )
 endfunction
 
 

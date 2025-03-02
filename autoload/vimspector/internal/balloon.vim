@@ -73,8 +73,6 @@ function! vimspector#internal#balloon#CreateTooltip( is_hover, ... ) abort
       \ 'callback': 'vimspector#internal#balloon#CloseCallback',
       \ }
 
-    let config = vimspector#internal#popup#SetBorderChars( config )
-
     if a:is_hover
       let config[ 'filter' ] = 'vimspector#internal#balloon#MouseFilter'
       let config[ 'mousemoved' ] = [ 0, 0, 0 ]
