@@ -233,28 +233,30 @@ class ProjectBreakpoints( object ):
 
     self._breakpoints_view = BreakpointsView( session_id )
 
+    # Symbols from https://symbl.cc/en/collections/list-bullets/
+
     if not signs.SignDefined( 'vimspectorBP' ):
       signs.DefineSign( 'vimspectorBP',
-                        text = '●',
-                        double_text = '●',
+                        text = '∙',
+                        double_text = '∙',
                         texthl = 'WarningMsg' )
 
     if not signs.SignDefined( 'vimspectorBPCond' ):
       signs.DefineSign( 'vimspectorBPCond',
-                        text = '◆',
-                        double_text = '◆',
+                        text = '♦',
+                        double_text = '♦',
                         texthl = 'WarningMsg' )
 
     if not signs.SignDefined( 'vimspectorBPLog' ):
       signs.DefineSign( 'vimspectorBPLog',
-                        text = '◆',
-                        double_text = '◆',
+                        text = '♦',
+                        double_text = '♦',
                         texthl = 'SpellRare' )
 
     if not signs.SignDefined( 'vimspectorBPDisabled' ):
       signs.DefineSign( 'vimspectorBPDisabled',
-                        text = '●',
-                        double_text = '●',
+                        text = '∙',
+                        double_text = '∙',
                         texthl = 'LineNr' )
 
 
