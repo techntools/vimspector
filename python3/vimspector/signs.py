@@ -65,17 +65,18 @@ def UnplaceSign( sign_id, group ):
   vim.command( f'sign unplace { sign_id } group={ group }' )
 
 
+# Symbols from https://symbl.cc/en/collections/list-bullets/
 def DefineProgramCounterSigns():
   if not SignDefined( 'vimspectorPC' ):
     DefineSign( 'vimspectorPC',
-                text = '▶',
-                double_text = '▶',
+                text = '➤',
+                double_text = '➤',
                 texthl = 'MatchParen',
                 linehl = 'CursorLine' )
   if not SignDefined( 'vimspectorPCBP' ):
     DefineSign( 'vimspectorPCBP',
-                text = '●▶',
-                double_text  = '▷',
+                text = '∙➤',
+                double_text  = '▻',
                 texthl = 'MatchParen',
                 linehl = 'CursorLine' )
   if not SignDefined( 'vimspectorNonActivePC' ):
