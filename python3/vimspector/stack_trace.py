@@ -155,18 +155,19 @@ class StackTraceView( object ):
     win.options[ 'cursorline' ] = False
     win.options[ 'signcolumn' ] = 'auto'
 
+    # Symbols from https://symbl.cc/en/collections/list-bullets/
 
     if not signs.SignDefined( 'vimspectorCurrentThread' ):
       signs.DefineSign( 'vimspectorCurrentThread',
-                        text = '▶ ',
-                        double_text = '▶',
+                        text = '➤ ',
+                        double_text = '➤',
                         texthl = 'MatchParen',
                         linehl = 'CursorLine' )
 
     if not signs.SignDefined( 'vimspectorCurrentFrame' ):
       signs.DefineSign( 'vimspectorCurrentFrame',
-                        text = '▶ ',
-                        double_text = '▶',
+                        text = '➤ ',
+                        double_text = '➤',
                         texthl = 'Special',
                         linehl = 'CursorLine' )
 
