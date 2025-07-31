@@ -1490,12 +1490,8 @@ class DebugSession( object ):
     # the codeView.SetCurrentFrame already checked the frame was valid and
     # countained a valid source
     assert frame
-    if self._codeView.current_syntax not in ( 'ON', 'OFF' ):
-      self._variablesView.SetSyntax( self._codeView.current_syntax )
-      self._stackTraceView.SetSyntax( self._codeView.current_syntax )
-    else:
-      self._variablesView.SetSyntax( None )
-      self._stackTraceView.SetSyntax( None )
+    self._variablesView.SetSyntax( None )
+    self._stackTraceView.SetSyntax( None )
 
     self._variablesView.LoadScopes( self._connection, frame )
     self._variablesView.EvaluateWatches( self._connection, frame )
