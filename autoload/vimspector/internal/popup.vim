@@ -22,8 +22,9 @@ set cpoptions&vim
 
 function! vimspector#internal#popup#DisplaySplash( message ) abort
   return popup_dialog( a:message, {
-        \ 'close': 'button',
         \ 'drag': 1,
+        \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
+        \ 'padding': [1],
         \ } )
 endfunction
 
@@ -139,7 +140,7 @@ function! vimspector#internal#popup#SetBorderChars( config ) abort
   " When ambiwidth is single, use prettier characters for the border. This
   " would look silly when ambiwidth is double.
   if &ambiwidth ==# 'single' && &encoding ==? 'utf-8'
-    let a:config[ 'borderchars' ] = [ '─', '│', '─', '│', '╭', '╮', '┛', '╰' ]
+    let a:config[ 'borderchars' ] = ['─', '│', '─', '│', '╭', '╮', '╯', '╰']
   endif
 
   return a:config
